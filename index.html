@@ -5,21 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML Starter Page</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="theme.js"></script>
 </head>
 <body>
 
     <header>
         <nav>
-            <div class="logo">MySite</div>
+            <div class="logo"><a href="index.html">MySite</a></div>
             <ul class="menu">
-                <li><a href="#">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="#typography">Typography</a></li>
                 <li><a href="#lists">Lists</a></li>
                 <li><a href="#table">Table</a></li>
                 <li><a href="#form">Form</a></li>
                 <li><a href="#media">Media</a></li>
                 <li><a href="#misc">Misc</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
             </ul>
+            <div class="theme-picker">
+                <label for="themeSelect" class="theme-picker-label">Theme</label>
+                <select id="themeSelect" class="theme-select" aria-label="Select page theme">
+                    <option value="light">Light</option>
+                    <option value="dark">Dark</option>
+                    <option value="matrix">Matrix</option>
+                    <option value="spring">Spring</option>
+                    <option value="lava">Lava</option>
+                </select>
+            </div>
         </nav>
     </header>
 
@@ -333,10 +345,49 @@
     <footer>
         <p>&copy; 2026 MySite. All rights reserved.</p>
         <p class="footer-links">
-            <a href="#">Privacy</a>
-            <a href="#">Terms</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="index.html">Home</a>
         </p>
     </footer>
 
+    <div class="cookie-overlay" id="cookieOverlay" role="dialog" aria-modal="true" aria-labelledby="cookieTitle">
+        <div class="cookie-modal card">
+            <h2 id="cookieTitle">Cookie Preferences</h2>
+            <p>We use cookies to provide essential site functionality and, with your consent, analytics and marketing features. You can accept all cookies, reject non-essential cookies, or customise your preferences below.</p>
+            <p>Read our <a href="privacy.html#cookies">Cookie Policy</a> for more details.</p>
+
+            <div class="cookie-options">
+                <label class="cookie-option">
+                    <input type="checkbox" checked disabled>
+                    <span>
+                        <strong>Strictly Necessary</strong>
+                        <small>Required for the website to function. Always active.</small>
+                    </span>
+                </label>
+                <label class="cookie-option">
+                    <input type="checkbox" id="analyticsCookies">
+                    <span>
+                        <strong>Analytics</strong>
+                        <small>Helps us understand how visitors use our site.</small>
+                    </span>
+                </label>
+                <label class="cookie-option">
+                    <input type="checkbox" id="marketingCookies">
+                    <span>
+                        <strong>Marketing</strong>
+                        <small>Used to deliver relevant content and measure campaigns.</small>
+                    </span>
+                </label>
+            </div>
+
+            <div class="cookie-actions">
+                <button type="button" class="cookie-btn cookie-btn-secondary" id="cookieReject">Reject All</button>
+                <button type="button" class="cookie-btn cookie-btn-secondary" id="cookieSave">Save Preferences</button>
+                <button type="button" class="cookie-btn cookie-btn-primary" id="cookieAcceptAll">Accept All</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="cookies.js"></script>
 </body>
 </html>
